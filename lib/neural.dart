@@ -60,6 +60,8 @@ class Network {
 }
 
 class Parser {
+  final String file;
+  const Parser(this.file);
   
   Future<Network> parse() async {
     Map<String, dynamic> file = jsonDecode(await get_file());
@@ -85,7 +87,7 @@ class Parser {
   }
 
   Future<String> get_file() {
-    return File('test.json').readAsString().then((String contents) {
+    return File(name).readAsString().then((String contents) {
       return contents;
     });
   }
