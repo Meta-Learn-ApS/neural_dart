@@ -87,7 +87,7 @@ class Parser {
   }
 
   Future<String> get_file() {
-    return File(name).readAsString().then((String contents) {
+    return File(file).readAsString().then((String contents) {
       return contents;
     });
   }
